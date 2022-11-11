@@ -21,12 +21,14 @@ namespace Calculator_App
     public partial class MainWindow : Window
     {
         List<int> currentNum { get; set; }
+        List<int> nums { get; set; }
+        List<string> functions { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
             string displayText;
-            List<int> nums = new List<int>();
+            
         }
 
         private void Button_1(object sender, RoutedEventArgs e)
@@ -81,22 +83,26 @@ namespace Calculator_App
 
         private void Button_Plus(object sender, RoutedEventArgs e)
         {
-
+            nums.Add(Compile_Num(currentNum));
+            functions.Add("Plus");
         }
 
         private void Button_Minus(object sender, RoutedEventArgs e)
         {
-
+            nums.Add(Compile_Num(currentNum));
+            functions.Add("Minus");
         }
 
         private void Button_Times(object sender, RoutedEventArgs e)
         {
-
+            nums.Add(Compile_Num(currentNum));
+            functions.Add("Times");
         }
 
         private void Button_Divide(object sender, RoutedEventArgs e)
         {
-
+            nums.Add(Compile_Num(currentNum));
+            functions.Add("Divide");
         }
 
         private void Button_Equals(object sender, RoutedEventArgs e)
